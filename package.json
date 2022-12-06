@@ -1,5 +1,5 @@
 {
-  "name": "saulo.is",
+  "name": "saulo-is",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -11,14 +11,19 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
+    "@angular/cdk": "^14.2.2",
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
+    "@angular/material": "^14.2.2",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@types/scrollmagic": "^2.0.2",
+    "gsap": "^3.11.2",
     "rxjs": "~7.5.0",
+    "scrollmagic": "^2.0.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

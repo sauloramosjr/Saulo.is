@@ -1,0 +1,359 @@
+.is {
+  --timeLineLeftDistance: calc(-51.389px + 18.056vw);
+  --timeLineTopDistance: 40vh;
+  --transitions: 1s;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-height: calc(100vh - 80px);
+  width: 100%;
+  overflow-y: scroll;
+  animation: animaCanScroll 3s 2.8s backwards;
+
+  * {
+    pointer-events: none;
+  }
+  &__time-line {
+    height: calc(100vh - var(--timeLineTopDistance));
+    width: 1px;
+    background: var(--secondary-color);
+    position: fixed;
+    top: var(--timeLineTopDistance);
+    left: var(--timeLineLeftDistance);
+    z-index: 3;
+    overflow: visible;
+    animation: animaTimeLine 2s 0.3s backwards;
+  }
+
+  @keyframes animaTimeLine {
+    0% {
+      translate: 0 calc(100vh - var(--timeLineTopDistance));
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 -calc(100vh - var(--timeLineTopDistance));
+    }
+  }
+  &__ball {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    left: -5px;
+    position: relative;
+    transition: 1s all ease-in-out;
+    z-index: 2;
+    animation: animaBall 3s backwards;
+    border: 0px solid var(--secondary-color);
+    background: var(--secondary-color);
+    left: -4px;
+    opacity: 1;
+    &__circle {
+      width: 11px;
+      height: 11px;
+      border: 1px solid var(--secondary-color);
+      border-radius: 50%;
+      opacity: 0;
+      left: -6px;
+      position: relative;
+      top: -11px;
+      animation: animaCircleBall 3s 2.8s;
+      transition: 0.3s all ease-in-out;
+      box-shadow: 1px 1px 9px 2px var(--secondary-color-dark);
+    }
+  }
+  @keyframes animaCircleBall {
+    0% {
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      scale: 3;
+    }
+  }
+  @keyframes animaCanScroll {
+    0% {
+      overflow-y: hidden;
+    }
+    30% {
+    }
+    100% {
+      overflow-y: scroll;
+    }
+  }
+  @keyframes animaBall {
+    0% {
+      border: 2px solid var(--secondary-color);
+      translate: 0 2000px;
+      opacity: 0;
+    }
+
+    80% {
+      translate: 0 0;
+      background: transparent;
+      opacity: 1;
+    }
+    95% {
+      background: var(--secondary-color);
+    }
+    99% {
+      left: -5px;
+    }
+    100% {
+      border: 0px solid var(--secondary-color);
+      background: var(--secondary-color);
+      left: -4px;
+    }
+  }
+  &__line-pass {
+    width: 1px;
+    height: 100%;
+    background: var(--secondary-color-dark);
+    position: absolute;
+    // left: var(--timeLineLeftDistance);
+    // top: var(--timeLineTopDistance);
+    z-index: 2;
+    animation: animaTimeLine 2s 0.3s backwards;
+  }
+  &__animation {
+    height: auto;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+  }
+}
+.line-to-pass {
+  width: 1px;
+  height: 100%;
+  background: var(--secondary-color-darkness);
+  position: absolute;
+  // left: var(--timeLineLeftDistance);
+  // top: -10%;
+  box-shadow: 1px 1px 1px 0px var(--secondary-color-darkness);
+  z-index: 1;
+  transition: all var(--transitions) ease-in-out;
+  // animation: animaTimeLine 2s 0.3s backwards;
+}
+.section {
+  height: 100vh;
+  color: white;
+  &__name {
+    position: fixed;
+  }
+}
+.little-description {
+  color: white;
+  position: relative;
+  top: 305px;
+  left: calc(var(--timeLineLeftDistance) + 50px);
+  opacity: 0;
+  transition: all var(--transitions) ease-in-out;
+}
+.little-description-1 {
+  transform: translateY(0) rotateX(0deg);
+  opacity: 1;
+  filter: blur(0);
+}
+.little-description-2 {
+  transform: translateY(25px) rotateX(45deg);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+.little-description-3 {
+  transform: translateY(50px) rotateX(90deg);
+  filter: blur(4px);
+}
+.meu-nome-visible {
+  opacity: 1;
+}
+
+.line-to-pass-1 {
+  opacity: 0;
+  translate: 0 0;
+}
+.line-to-pass-2 {
+  opacity: 1;
+  translate: 0 -150px;
+}
+.line-to-pass-3 {
+  opacity: 1;
+  translate: 0 -300px;
+}
+
+@keyframes scale-up-ver-bottom {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 0% 100%;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(5);
+    transform-origin: 0% 100%;
+  }
+}
+.workshowcase {
+  position: fixed;
+  opacity: 0;
+  top: 380px;
+  left: calc(var(--timeLineLeftDistance) + 50px);
+  transition: all 0.5s ease-in-out;
+  color: white;
+  transform: scale(2) cubic-bezier(0.47, 0, 0.745, 0.715);
+  filter: blur(4px);
+}
+.myCV {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  * {
+    font-size: 30px;
+  }
+}
+.workshowcase-1 {
+  opacity: 0;
+  height: 0;
+}
+.workshowcase-2 {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+.workshowcase-3 {
+  opacity: 1;
+  filter: blur(0);
+  .myCV {
+    pointer-events: all !important;
+    cursor: pointer;
+  }
+}
+.myName {
+  font-size: 38px;
+  word-spacing: -20px;
+}
+.subName {
+  position: relative;
+  left: 2px;
+}
+.meu-nome {
+  color: white;
+  position: relative;
+  opacity: 0;
+  top: 300px;
+  left: calc(var(--timeLineLeftDistance) + 50px);
+  font-size: 40px;
+  transition: all 1s ease-in-out;
+
+  span {
+    color: var(--secondary-color);
+    font-size: 30px;
+  }
+}
+
+@keyframes slide-in-meu-nome {
+  0% {
+    transform: translateY(-50px) rotateX(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-meu-nome-semi {
+  0% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+
+  100% {
+    transform: translateY(-25px) rotateX(-45deg);
+    opacity: 0.5;
+  }
+}
+@keyframes slide-in-meu-nome-not {
+  0% {
+    transform: translateY(-25px) rotateX(-45deg);
+    filter: blur(4);
+  }
+
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+    opacity: 0.5;
+    filter: blur(0);
+  }
+}
+.meu-nome-visible-initial {
+  animation: slide-in-meu-nome 3s 2.5s backwards;
+  opacity: 1;
+}
+.meu-nome-visible {
+  transition: all var(--transitions) ease-in-out;
+  transform: translateY(0) rotateX(0);
+  opacity: 1;
+  filter: blur(0);
+}
+.visible {
+  transform: translateY(0) rotateX(0deg);
+  // opacity: 1;
+}
+.meu-nome-semi-visible {
+  transform: translateY(-25px) rotateX(-45deg);
+  opacity: 0.5;
+  filter: blur(2px);
+}
+.meu-nome-not-visible {
+  transform: translateY(-50px) rotateX(-90deg);
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.slide-in-left-initial {
+  animation: slide-in-left 1s 3.8s backwards;
+  opacity: 1;
+}
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.myCV:checked {
+  & ~ .teste {
+    span {
+      animation: testeAnimation 2s both;
+    }
+  }
+}
+.testando {
+  position: relative;
+  height: 20px;
+  background: aliceblue;
+  width: 2px;
+  rotate: -15deg;
+  top: -65px;
+  left: 500px;
+}
+
+@keyframes testeAnimation {
+  0% {
+    background: blue;
+    opacity: 1;
+    transform: translateX(1000px) rotateY(-45deg) scale(1);
+  }
+  // 45% {
+  //   transform: translateX(0) rotateY(0) scale(1);
+  // }
+  // 50% {
+  //   transform: translateX(0) rotateY(0) scale(1);
+  // }
+  // 55% {
+  //   transform: translateX(0) rotateY(0) scale(1);
+  // }
+  100% {
+    transform: translateX(-1000px) rotateY(-30deg) scale(0);
+  }
+}

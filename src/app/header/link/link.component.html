@@ -1,0 +1,7 @@
+<button
+  class="header-buttons"
+  [ngClass]="{ active: currentyUrl == link }"
+  (click)="goToThisRoute($event)"
+>
+  {{ title }}
+</button>

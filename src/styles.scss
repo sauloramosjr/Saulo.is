@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&family=Yanone+Kaffeesatz:wght@200;300;400;500;600;700&display=swap");
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background-color: var(--background);
+  * {
+    font-family: "Roboto Mono", monospace;
+    font-size: large;
+  }
+}
+
+:root {
+  --primary-color: #c4c4c4;
+  --secondary-color: rgb(104 42 233);
+  --secondary-color-dark: rgb(44, 18, 100);
+  --secondary-color-darkness: rgb(23, 8, 56);
+  --alert-color: rgb(190, 117, 33);
+  --btn-text: --primary-color;
+  --btn-background: transparent;
+  --background: rgb(0, 0, 0);
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+.color-primary {
+  color: var(--primary-color);
+}

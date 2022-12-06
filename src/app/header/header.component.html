@@ -1,0 +1,13 @@
+<div class="header">
+  <div>
+    <p><span class="color-primary">this</span>{{ $title | async }}</p>
+  </div>
+
+  <div style="padding-right: 40px">
+    <app-link
+      *ngFor="let item of menu"
+      [title]="item.title"
+      [link]="item.link"
+    ></app-link>
+  </div>
+</div>

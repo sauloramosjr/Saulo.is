@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 1px 0px 40px 5px var(--background);
+  position: fixed;
+  width: 100%;
+  z-index: 6;
+  background: var(--background);
+  p {
+    color: var(--secondary-color);
+    font-size: 19px;
+    font-weight: 600;
+  }
+  animation: animaHeader 1s 3.4s backwards;
+}
+
+@keyframes animaHeader {
+  0% {
+    opacity: 0;
+    translate: 0 -40px;
+  }
+
+  100% {
+    translate: 0 0px;
+    opacity: 1;
+  }
+}

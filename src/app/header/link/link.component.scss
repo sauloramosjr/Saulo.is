@@ -1,0 +1,14 @@
+.header-buttons {
+  color: var(--primary-color);
+  background: var(--btn-background);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.5s ease-in-out;
+  &.active {
+    color: grey;
+  }
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
